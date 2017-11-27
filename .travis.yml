@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+  
+before_install:
+  - docker version
+
+script:
+  - docker build -t grimd34th/cloud9-docker .
