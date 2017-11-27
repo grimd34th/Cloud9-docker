@@ -33,4 +33,4 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 EXPOSE 80
 EXPOSE 3000
 
-CMD ['node', '/cloud9/server.js', '--listen 0.0.0.0', '--port 80', '-w /workspace']
+CMD node /cloud9/server.js --listen 0.0.0.0 --port 80 -w /workspace
