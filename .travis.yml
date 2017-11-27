@@ -1,5 +1,12 @@
 sudo: required
 
+language: node
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
 services:
   - docker
   
@@ -9,7 +16,7 @@ before_install:
 script:
   - docker build -t d34th/cloud9-docker .
   
-  after_success:
+after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push d34th/cloud9-docker;
