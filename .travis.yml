@@ -7,4 +7,10 @@ before_install:
   - docker version
 
 script:
-  - docker build -t grimd34th/cloud9-docker .
+  - docker build -t d34th/cloud9-docker .
+  
+  after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push d34th/cloud9-docker;
+    fi
