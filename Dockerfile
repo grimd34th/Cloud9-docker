@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:rolling
 
 # ------------------------------------------------------------------------------
 # Install base
@@ -7,7 +7,7 @@ RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git lib
 
 # ------------------------------------------------------------------------------
 # Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs python2.7
 
 # ------------------------------------------------------------------------------
